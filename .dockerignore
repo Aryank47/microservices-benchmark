@@ -1,0 +1,6 @@
+# Exclude git history and other unnecessary files
+.git
+.venv
+__pycache__
+tests
+*.pyc

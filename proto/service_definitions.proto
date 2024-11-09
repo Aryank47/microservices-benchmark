@@ -1,0 +1,47 @@
+syntax = "proto3";
+
+package benchmark;
+
+// Simple request-response service
+service SimpleService {
+    rpc ProcessRequest (SimpleRequest) returns (SimpleResponse);
+}
+
+message SimpleRequest {
+    string message = 1;
+    map<string, string> data = 2;
+}
+
+message SimpleResponse {
+    string status = 1;
+    map<string, string> data = 2;
+}
+
+// Streaming service
+service StreamingService {
+    rpc StreamData (StreamRequest) returns (stream StreamResponse);
+}
+
+message StreamRequest {
+    int32 number_of_messages = 1;
+}
+
+message StreamResponse {
+    string data = 1;
+    int64 timestamp = 2;
+}
+
+// Large payload service
+service PayloadService {
+    rpc ProcessLargePayload (PayloadRequest) returns (PayloadResponse);
+}
+
+message PayloadRequest {
+    bytes data = 1;
+    int32 size_kb = 2;
+}
+
+message PayloadResponse {
+    bool success = 1;
+    int32 processed_size_kb = 2;
+}
