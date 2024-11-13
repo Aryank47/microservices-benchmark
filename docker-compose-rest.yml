@@ -11,18 +11,18 @@ services:
     networks:
       - benchmark-network
 
-  grpc-service:
-    build:
-      context: .
-      dockerfile: ./deployment/docker/grpc/Dockerfile
-    ports:
-      - "50051:50051"  # Host:50051 -> Container:50051 (gRPC API)
-      - "8002:8002"    # Host:8002 -> Container:8002 (gRPC Metrics)
-    volumes:
-      - ./src:/app/src
-      - ./proto:/app/proto
-    networks:
-      - benchmark-network
+  # grpc-service:
+  #   build:
+  #     context: .
+  #     dockerfile: ./deployment/docker/grpc/Dockerfile
+  #   ports:
+  #     - "50051:50051"  # Host:50051 -> Container:50051 (gRPC API)
+  #     - "8002:8002"    # Host:8002 -> Container:8002 (gRPC Metrics)
+  #   volumes:
+  #     - ./src:/app/src
+  #     - ./proto:/app/proto
+  #   networks:
+  #     - benchmark-network
 
   prometheus:
     image: prom/prometheus

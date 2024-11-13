@@ -1,15 +1,15 @@
 services:
-  rest-service:
-    build:
-      context: .
-      dockerfile: ./deployment/docker/rest/Dockerfile
-    ports:
-      - "8001:8001"  # Host:8001 -> Container:8000 (REST API)
-    volumes:
-      - ./src:/app/src
-      - ./proto:/app/proto
-    networks:
-      - benchmark-network
+  # rest-service:
+  #   build:
+  #     context: .
+  #     dockerfile: ./deployment/docker/rest/Dockerfile
+  #   ports:
+  #     - "8001:8001"  # Host:8001 -> Container:8000 (REST API)
+  #   volumes:
+  #     - ./src:/app/src
+  #     - ./proto:/app/proto
+  #   networks:
+  #     - benchmark-network
 
   grpc-service:
     build:
