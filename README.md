@@ -13,7 +13,6 @@ This project benchmarks the performance of REST and gRPC protocols in microservi
 5. [Monitoring with Prometheus and Grafana](#monitoring-with-prometheus-and-grafana)
 6. [Load Testing](#load-testing)
 7. [Results](#results)
-8. [License](#license)
 
 ---
 
@@ -235,9 +234,3 @@ locust -f tests/load_tests/grpc_tests.py --headless -u 100 -r 10 --run-time 10m
 - Visualize metrics in Grafana dashboards.
 - Export results as CSV from Grafana for further analysis.
 - Compare latency and throughput metrics for REST and gRPC services.
-
----
-
-## License
-
-This project is licensed under the MIT License. See `LICENSE` for details.
