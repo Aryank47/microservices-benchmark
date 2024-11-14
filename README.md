@@ -94,7 +94,7 @@ microservices-benchmark/
 Clone the repository and navigate into the directory:
 
 ```bash
-git clone <repository_url>
+git clone https://github.com/Aryank47/microservices-benchmark.git
 cd microservices-benchmark
 ```
 
@@ -167,8 +167,8 @@ Add dashboards for monitoring latency, throughput, and resource utilization.
      ```
    - **gRPC Simple Service**:
      `prometheus
-     histogram_quantile(0.5, sum(rate(grpc_request_latency_seconds_bucket{service="benchmark.SimpleService"}[1m])) by (le))
-     `
+histogram_quantile(0.5, sum(rate(grpc_request_latency_seconds_bucket{service="benchmark.SimpleService"}[1m])) by (le))
+`
      Similar panels can be setup for other services
 
 2. **Throughput**
@@ -179,8 +179,8 @@ Add dashboards for monitoring latency, throughput, and resource utilization.
      ```
    - **gRPC Simple Service**:
      `prometheus
-     sum(rate(grpc_request_count_total{service="benchmark.SimpleService"}[1m]))
-     `
+sum(rate(grpc_request_count_total{service="benchmark.SimpleService"}[1m]))
+`
      Similar panels can be setup for other services
 
 3. **CPU Utilization**
