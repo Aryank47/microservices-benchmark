@@ -5,7 +5,7 @@ services:
       dockerfile: ./deployment/docker/grpc/Dockerfile
     ports:
       - "50051:50051"  # Host:50051 -> Container:50051 (gRPC API)
-      - "8181:8181"    # Host:8002 -> Container:8002 (gRPC Metrics)
+      - "8002:8002"    # Host:8002 -> Container:8002 (gRPC Metrics)
     volumes:
       - ./src:/app/src
       - ./proto:/app/proto
@@ -15,7 +15,7 @@ services:
   prometheus:
     image: prom/prometheus
     ports:
-      - "9191:9191"
+      - "9090:9090"
     volumes:
       - ./deployment/docker/prometheus/prometheus.yml:/etc/prometheus/prometheus.yml
     command:
@@ -26,7 +26,7 @@ services:
   grafana:
     image: grafana/grafana
     ports:
-      - "3131:3131"
+      - "3000:3000"
     volumes:
       - grafana-storage:/var/lib/grafana
     networks:
@@ -35,7 +35,7 @@ services:
   node-exporter:
     image: prom/node-exporter
     ports:
-      - "9101:9101"
+      - "9100:9100"
     networks:
       - benchmark-network
 
