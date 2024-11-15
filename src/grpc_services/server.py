@@ -158,7 +158,7 @@ def serve():
     logger.info("Prometheus metrics server started on port 8002")
 
     server = grpc.server(
-        futures.ThreadPoolExecutor(max_workers=100),
+        futures.ThreadPoolExecutor(max_workers=5000),
         interceptors=[PrometheusInterceptor()],
     )
 
