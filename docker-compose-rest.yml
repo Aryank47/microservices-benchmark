@@ -4,7 +4,8 @@ services:
       context: .
       dockerfile: ./deployment/docker/rest/Dockerfile
     ports:
-      - "8001:8001"  # Host:8001 -> Container:8000 (REST API)
+      - "8001:8000"  # Host:8001 -> Container:8000 (REST API)
+      # - "8000:8000"  # Host:8000 -> Container:8002 (REST Metrics)
     volumes:
       - ./src:/app/src
       - ./proto:/app/proto
