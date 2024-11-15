@@ -54,7 +54,7 @@ ENV PYTHONPATH=/app
 COPY --from=build /usr/local/lib/python3.11/site-packages /usr/local/lib/python3.11/site-packages
 COPY --from=build /app /app
 
-EXPOSE 8000
+EXPOSE 8000 8001
 
 # Start the FastAPI application with auto-reload
 CMD ["python", "-m", "uvicorn", "src.rest_services.main:app", "--host", "0.0.0.0", "--port", "8000", "--reload", "--reload-dir", "./src"]
