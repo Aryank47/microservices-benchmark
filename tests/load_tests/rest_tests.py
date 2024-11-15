@@ -2,7 +2,8 @@ from locust import HttpUser, between, task
 
 
 class RESTUser(HttpUser):
-    host = "http://localhost:8001"
+    # host = "http://localhost:8000" # local deployment
+    host = "http://34.30.3.222:8000"  # cloud deployment
     wait_time = between(0.1, 1.0)
 
     @task(3)

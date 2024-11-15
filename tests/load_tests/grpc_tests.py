@@ -118,7 +118,8 @@ class GrpcUser(User):
 
 
 class HelloGrpcUser(GrpcUser):
-    host = "localhost:50051"
+    host = "34.57.71.117:50051"  # cloud deployment
+    # host = "localhost:50051" #local deployment
     stub_classes = [
         pb2_grpc.SimpleServiceStub,
         pb2_grpc.StreamingServiceStub,
